@@ -1,0 +1,19 @@
+/* 
+Justificativa de existir 2 versões para 
+resolução do exercício 2:
+
+- Achei meio em aberto o enunciado da questão,
+referente aos critérios de como deveria ser
+elaborado a função que calcula as medias dos
+alunos -- haja vista que não foi determinado
+como que seria atribuido os valores as notas
+dos alunos.
+
+Dado isso, fiz 2 resoluções. Uma bem simples,
+utilizando apenas vetores; E outra um pouco 
+mais elaborada, utilizando atribuição e leitura
+de dados em matrizes. (Nesse 2 versão, também
+utilizei a função rand() para facilitar a 
+atribuição das notas aos aluno); 
+
+*/

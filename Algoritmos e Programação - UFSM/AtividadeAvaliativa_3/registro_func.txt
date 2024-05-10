@@ -1,0 +1,8 @@
+Naruto 12 2
+Sasuke 12 3
+Sakura 5 5
+Hinata 30 2
+Shikamaru 21 9
+Ino 7 1
+Kakashi 2 7
+	

@@ -1,0 +1,37 @@
+//------------------------------------------------//
+// Disciplina: Algoritmos e lógica de programação //
+//------------------------------------------------//
+// ATIVIDADE AVALIATIVA 2 //
+// ALUNO: LEONARDO CAMARGO ROSSATO //
+// MATRICULA: 2020520162 //
+//------------------------------------------------//
+// #####   E X E R C I C I O - 01 #####//
+//------------------------------------------------//
+
+
+Questão a) Vantagens da utilização de funções;
+
+-> A principal vantagem em se usar funções, ao meu ver, é a possibilidade de segmentação do código - isso ajuda bastante com a organização da estrutura do código.
+
+Outra questão fundamental sobre o uso de funções
+é que às vezes é a única forma de criar certos algortimos que dependem de um outro algoritmo externo auxiliar, que precisa ser chamado a todo moemento. 
+
+
+-----------------------------------------------
+ 
+Questão b) Características da utilização de passagem de parâmetros por valor;
+
+-> Para passar valores como parâmetro de uma função é necessário declarar nos argumentos da função o mesmo tipo dos valores de entrada. 
+
+Para passagens de valores simples para funções, como um inteiro, um vetor e até uma matriz, é relativamente simples; Todavia, quando começa a envolver struct, ponteiros,... nem sempre é trivial a passagem de valores para uma função.
+
+-----------------------------------------------
+ 
+Questão c) Objetivos da instrução return.
+
+-> O objeto da intrução return é bem clara:
+Realizar a saída imediata de uma função; e informar ao compilar que aquela função retorna uma determinada variável ao código. 
+
+*Caso não haja um valor especificado ao final da função, o compilar entende que essa função é do tipo void. 
+
+
