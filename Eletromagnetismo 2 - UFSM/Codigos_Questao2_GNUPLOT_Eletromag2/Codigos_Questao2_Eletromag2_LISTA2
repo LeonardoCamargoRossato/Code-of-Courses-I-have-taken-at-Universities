@@ -1,0 +1,245 @@
+###############################################################################################
+QUESTAO 02 | ELETROMAG 2  |  LEONARDO C ROSSATO
+###############################################################################################
+
+
+####  RELAÇÃO ONDA INCIDENTE X TRANSMITIDA
+
+-------------------------------------------------------------
+PLOT COM AMPLITUDES Ei VARIANDO | ANGULO INCIDENCIA CONSTANTE
+-------------------------------------------------------------
+
+Ei = 1  |  w = 3x10^8  |  c = 3x10^8  
+
+####  RELAÇÃO ONDA INCIDENTE X TRANSMITIDA
+
+set grid
+set xlabel "Distancia percorrida da Onda em Z"
+set ylabel "Campo Eletrico: E"
+set title "Relacao Amplitudes Campos Eletricos: Onda Incidente x Transmitida || COM: w == c | t = 0 | x = z | o = Ang.Incidencia | Ei = Amplitude De E" 
+set xrange [-10:10]
+set yrange [-3.5:4]
+teta(o) = 2*cos(o) / (cos(o) + 2.42*sqrt(1 - 0.17*(sin(o))**2))
+E_I(x,Ei,o) = Ei*cos(x)
+E_T(x,Ei,o) = teta(o)*E_I(x,Ei,o)
+Onda(x,Ei,o) = (x<=0) ? E_I(x,Ei,o):E_T(x,Ei,o)
+
+se st d l
+plot "PlanoDeRefracao.dat" lw 3 
+
+replot Onda(x,Ei=1,o=pi/6)
+rep Onda(x,Ei=2,o=pi/6)
+rep Onda(x,Ei=3,o=pi/6)
+
+###############################################################################################
+###############################################################################################
+
+####  RELAÇÃO ONDA INCIDENTE X TRANSMITIDA
+
+------------------------------------------
+PLOT COM ANGULOS DIFERENTES | Ei CONSTANTE
+------------------------------------------
+
+
+Ei = 1  |  w = 3x10^8  |  c = 3x10^8  
+
+set grid
+set xlabel "Distancia percorrida da Onda em Z"
+set ylabel "Campo Eletrico: E"
+set title "Relacao Amplitudes Campos Eletricos: Onda Incidente x Transmitida || COM: w == c | t = 0 | x = z | o = Ang.Incidencia | Ei = Amplitude De E" 
+set xrange [-10:10]
+set yrange [-1.5:2]
+teta(o) = 2*cos(o) / (cos(o) + 2.42*sqrt(1 - 0.17*(sin(o))**2))
+E_I(x,Ei,o) = Ei*cos(x)
+E_T(x,Ei,o) = teta(o)*E_I(x,Ei,o)
+Onda(x,Ei,o) = (x<=0) ? E_I(x,Ei,o):E_T(x,Ei,o)
+
+se st d l
+plot "PlanoDeRefracao2.dat" lw 3 
+
+replot Onda(x,Ei=1,o=0)
+rep Onda(x,Ei=1,o=pi/6)
+rep Onda(x,Ei=1,o=pi/4)
+rep Onda(x,Ei=1,o=pi/3)
+rep Onda(x,Ei=1,o=pi/2)
+
+###############################################################################################
+###############################################################################################
+###############################################################################################
+###############################################################################################
+
+####  RELAÇÃO ONDA INCIDENTE   X   R E F L E T I D A   |  Polarização VERTICAL
+
+-------------------------------------------------------------
+PLOT COM AMPLITUDES Ei VARIANDO | ANGULO INCIDENCIA CONSTANTE
+-------------------------------------------------------------
+
+set grid
+set xlabel "Distancia percorrida da Onda em Z"
+set ylabel "Campo Eletrico: E"
+set title "Relacao Amplitudes Campos Eletricos: Onda Incidente x REFLETIDA || onde: w == c | t = 0 | x = z | o = Ang.Incidencia | Ei = Amplitude De E" 
+set xrange [-15:6.3]
+set yrange [-3.5:4]
+teta(o) = (cos(o) - 2.42*sqrt(1 - 0.17*(sin(o))**2 )) / (cos(o) + 2.42*sqrt(1 - 0.17*(sin(o))**2))
+E_I(x,Ei,o) = Ei*cos(x) 
+E_R(x,Ei,o) = teta(o)*E_I(x,Ei,o)
+zero(x) = 0
+OndaE_I(x,Ei,o) = (x<=0) ? E_I(x,Ei,o):zero(x)
+OndaE_R(x,Ei,o) = (x<=0) ? E_R(x,Ei,o):zero(x)
+
+plot OndaE_I(x,Ei=1,o=pi/6) lc 6 lw 1
+rep OndaE_R(x,Ei=1,o=pi/6) lc 12 lw 1
+replot OndaE_I(x,Ei=2,o=pi/6) lc 6 lw 2
+rep OndaE_R(x,Ei=2,o=pi/6) lc 12 lw 2
+replot OndaE_I(x,Ei=3,o=pi/6) lc 6 lw 3
+rep OndaE_R(x,Ei=3,o=pi/6) lc 12 lw 3
+
+rep zero(x) lc 8
+
+se st d l
+replot "PlanoDeRefracao.dat" lw 3 lc 1
+
+###############################################################################################
+###############################################################################################
+
+####  RELAÇÃO ONDA INCIDENTE   X   R E F L E T I D A  |  Polarização VERTICAL
+
+------------------------------------------
+PLOT COM ANGULOS DIFERENTES | Ei CONSTANTE   
+------------------------------------------
+
+set grid
+set xlabel "Distancia percorrida da Onda em Z"
+set ylabel "Campo Eletrico: E"
+set title "Relacao Amplitudes Campos Eletricos: Onda Incidente x REFLETIDA || onde: w == c | t = 0 | x = z | o = Ang.Incidencia | Ei = Amplitude De E" 
+set xrange [-15:6.3]
+set yrange [-2:4]
+teta(o) = (cos(o) - 2.42*sqrt(1 - 0.17*(sin(o))**2 )) / (cos(o) + 2.42*sqrt(1 - 0.17*(sin(o))**2))
+E_I(x,Ei,o) = Ei*cos(x) 
+E_R(x,Ei,o) = teta(o)*E_I(x,Ei,o)
+zero(x) = 0
+OndaE_I(x,Ei,o) = (x<=0) ? E_I(x,Ei,o):zero(x)
+OndaE_R(x,Ei,o) = (x<=0) ? E_R(x,Ei,o):zero(x)
+
+plot OndaE_I(x,Ei=1,o=0) lc 6 lw 1
+rep OndaE_R(x,Ei=1,o=0) lc 12 lw 1
+replot OndaE_I(x,Ei=1,o=pi/6) lc 6 lw 2
+rep OndaE_R(x,Ei=1,o=pi/6) lc 12 lw 2
+replot OndaE_I(x,Ei=1,o=pi/3) lc 6 lw 2
+rep OndaE_R(x,Ei=1,o=pi/3) lc 12 lw 3
+replot OndaE_I(x,Ei=1,o=pi/2) lc 6 lw 2
+rep OndaE_R(x,Ei=1,o=pi/2) lc 12 lw 4
+
+
+rep zero(x) lc 8
+
+se st d l
+replot "PlanoDeRefracao.dat" lw 3 lc 1
+
+
+###############################################################################################
+###############################################################################################
+
+####  RELAÇÃO ONDA INCIDENTE   X   R E F L E T I D A   X    Transmitida 
+
+set grid
+set xlabel "Distancia percorrida da Onda em Z"
+set ylabel "Campo Eletrico: E"
+set title "Relacao Campos Eletricos: Ondas INCIDENTE x REFLETIDA X TRANSMITIDA || onde: w == c | t = 0 | x = z | o = Ang.Incidencia | Ei = Amplitude De E" 
+set xrange [-10:10]
+set yrange [-1.2:2.2]
+teta_R(o) = (cos(o) - 2.42*sqrt(1 - 0.17*(sin(o))**2 )) / (cos(o) + 2.42*sqrt(1 - 0.17*(sin(o))**2))
+E_I(x,Ei,o) = Ei*cos(x) 
+E_R(x,Ei,o) = teta_R(o)*E_I(x,Ei,o)
+
+teta_T(o) = 2*cos(o) / (cos(o) + 2.42*sqrt(1 - 0.17*(sin(o))**2))
+E_T(x,Ei,o) = teta_T(o)*E_I(x,Ei,o)
+
+zero(x) = 0
+OndaE_I(x,Ei,o) = (x<=0) ? E_I(x,Ei,o):zero(x)
+OndaE_R(x,Ei,o) = (x<=0) ? E_R(x,Ei,o):zero(x)
+OndaE_T(x,Ei,o) = (x>=0) ? E_T(x,Ei,o):zero(x)
+
+plot OndaE_I(x,Ei=1,o=pi/6) lc 6 lw 2
+rep OndaE_R(x,Ei=1,o=pi/6) lc 12 lw 2
+rep OndaE_T(x,Ei=1,o=pi/6) lc 7 lw 2
+rep zero(x) lc 8 lw 3
+
+se st d l
+replot "PlanoDeRefracao2.dat" lw 8 lc 1
+
+
+
+###############################################################################################
+###############################################################################################
+
+####  RELAÇÃO ONDA INCIDENTE   X   R E F L E T I D A | Polarização Paralela
+
+-------------------------------------------------------------
+PLOT COM AMPLITUDES Ei VARIANDO | ANGULO INCIDENCIA CONSTANTE
+-------------------------------------------------------------
+
+set grid
+set xlabel "Distancia percorrida da Onda em Z"
+set ylabel "Campo Eletrico: E"
+set title "Relacao Amplitudes Campos Eletricos: Onda Incidente x REFLETIDA || onde: w == c | t = 0 | x = z | o = Ang.Incidencia | Ei = Amplitude De E" 
+set xrange [-15:6.3]
+set yrange [-3.5:4]
+teta(o) = (-2.42*cos(o) + sqrt(1 - 0.17*(sin(o))**2 )) / (-2.42*cos(o) + sqrt(1 - 0.17*(sin(o))**2))
+E_I(x,Ei,o) = Ei*cos(x) 
+E_R(x,Ei,o) = teta(o)*E_I(x+pi,Ei,o)
+zero(x) = 0
+OndaE_I(x,Ei,o) = (x<=0) ? E_I(x,Ei,o):zero(x)
+OndaE_R(x,Ei,o) = (x<=0) ? E_R(x,Ei,o):zero(x)
+
+plot OndaE_I(x,Ei=1,o=pi/6) lc 6 lw 1
+rep OndaE_R(x,Ei=1,o=pi/6) lc 12 lw 1
+replot OndaE_I(x,Ei=2,o=pi/6) lc 6 lw 2
+rep OndaE_R(x,Ei=2,o=pi/6) lc 12 lw 2
+replot OndaE_I(x,Ei=3,o=pi/6) lc 6 lw 3
+rep OndaE_R(x,Ei=3,o=pi/6) lc 12 lw 3
+
+rep zero(x) lc 8
+
+se st d l
+replot "PlanoDeRefracao.dat" lw 3 lc 1
+
+###############################################################################################
+###############################################################################################
+
+####  RELAÇÃO ONDA INCIDENTE   X   R E F L E T I D A   ||  Polarização PARALELA 
+
+------------------------------------------
+PLOT COM ANGULOS DIFERENTES | Ei CONSTANTE
+------------------------------------------
+
+set grid
+set xlabel "Distancia percorrida da Onda em Z"
+set ylabel "Campo Eletrico: E"
+set title "RelacaoCamposEletric: Onda Incidente x REFLETIDA | Polariz. PARALELA |w=c|t=0|x=z|o=Ang.Incidencia|E_i=Amplit. E" 
+set xrange [-15:6.3]
+set yrange [-1.5:2]
+teta(o) = (-2.42*cos(o) + sqrt(1 - 0.17*(sin(o))**2 )) / (2.42*cos(o) + sqrt(1 - 0.17*(sin(o))**2))
+E_I(x,Ei,o) = Ei*cos(x) 
+E_R(x,Ei,o) = teta(o)*E_I(x+pi,Ei,o)
+zero(x) = 0
+OndaE_I(x,Ei,o) = (x<=0) ? E_I(x,Ei,o):zero(x)
+OndaE_R(x,Ei,o) = (x<=0) ? E_R(x,Ei,o):zero(x)
+BREWSTER(x,Ei,o) = (x<=0) ? E_R(x,Ei,o):zero(x)
+
+plot OndaE_I(x,Ei=1,o=0) lc 6 lw 1
+rep OndaE_R(x,Ei=1,o=0) lc 12 lw 1
+replot OndaE_I(x,Ei=1,o=pi/6) lc 6 lw 2
+rep OndaE_R(x,Ei=1,o=pi/6) lc 12 lw 2
+replot OndaE_I(x,Ei=1,o=pi/3) lc 6 lw 2
+rep OndaE_R(x,Ei=1,o=pi/3) lc 12 lw 3
+replot OndaE_I(x,Ei=1,o=pi/2) lc 6 lw 2
+rep OndaE_R(x,Ei=1,o=pi/2) lc 12 lw 4
+rep BREWSTER(x,Ei=1,o=1.1789) lc 7 lw 4
+
+rep zero(x) lc 8
+
+se st d l
+replot "PlanoDeRefracao2.dat" lw 3 lc 1
+
+
