@@ -1,0 +1,5 @@
+4
+1234567   'Fulano Silveira'   8.6		
+1234566   'Beltrano Silva'   7.2
+1234565   'Sicreia Santos'   3.6
+1234564	  'Ze Rocha'   5.6
