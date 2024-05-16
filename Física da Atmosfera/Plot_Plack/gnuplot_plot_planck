@@ -1,0 +1,66 @@
+gnuplot
+set grid
+a1 = 1.44E-02
+a2 = 3.75E-16
+T=5800
+set xrange [1E-6:6E-6]
+f(x) = (a1/(x**5))/(exp(a2/(x*T))-1)
+plot f(x)
+
+#Temperatura SOL
+gnuplot
+set grid
+a1 = 3.75*10**(-16)
+a2 = 1.44*10**(-2)
+T = 5800
+set yrange [-0.5*10**(13):10**(14)]
+set xrange [0:20]
+f_Sol(x) = (a1/(x**(-30)))/(exp(a2/(T*(x**(-6))))-1)
+plot f_Sol(x)
+
+#Temperatura Terra
+gnuplot
+set grid
+a1 = 3.75*10**(-16)
+a2 = 1.44*10**(-2)
+T = 280
+set yrange [-0.5*10**(7):3*10**(7)]
+set xrange [0:10]
+f_Terra(x) = (a1/((x**(-6))**(5))) / (exp(a2/(T*(x**(-6))))-1)
+plot f_Terra(x)
+
+#Temperatura Terra
+gnuplot
+set grid
+a1 = 3.75*10**(-16)
+a2 = 1.44*10**(-2)
+T = 280
+set xrange [0:10]
+f_Terra(x) = 10**(14) / ( exp( a2 / (T*(x**(-6))) ) -1  )
+plot f_Terra(x)
+
+#Temperatura Terra
+gnuplot
+set grid
+a1 = 3.75*10**(-16)
+a2 = 1.44*10**(-2)
+T = 280
+set yrange [-0.5*10**(7):3*10**(7)]
+set xrange [1*10**(-5):12*10**(-5)]
+f_Terra(x) = (a1/(x**(5)))/(exp(a2/(T*(x**(5))))-1)
+plot f_Terra(x)
+
+
+gfortran plot_planck.f90 -o plot_planck
+./plot_planck
+gnuplot
+set nokey
+set yrange [-0.2*10**7:7*10**7]
+plot 'fort.101' u 1:2 w lp lc 6 lt 7
+
+gnuplot
+set nokey
+set yrange [-0.2*10**14:2.5*10**14]
+set xrange [0:4]
+plot 'fort.102' u 1:2 w lp lc 5 lt 7
+
