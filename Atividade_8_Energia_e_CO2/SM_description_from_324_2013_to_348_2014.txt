@@ -1,0 +1,123 @@
+From 20 nov 2013 to 14 dez 2014
+
+Local Time
+
+Sensors: 
+Pressure (1 m; Analyzer Interface Unit - Li7550)
+Sonic Temperature (3m; Gill Instruments, Wind Master Pro)
+Wind speed components (3m; Gill Instruments, Wind Master Pro)
+Air Temperature (3m; Vaisala, HMP155)
+Relative Humidity (3m; Vaisala, HMP155)
+Incoming Short wave radiation (3 m; Kipp & Zonen, CNR4)
+Outgoing Short wave radiation (3 m; Kipp & Zonen, CNR4)
+Incoming Long wave radiation (3 m; Kipp & Zonen, CNR4)
+Outgoing Long wave radiation (3 m; Kipp & Zonen, CNR4)
+Net Radiation (3 m; Kipp & Zonen, CNR4)
+Incoming Photosynthetic Active Radiation (PAR) (3 m; Kipp&Zonen, Li-1905)
+H2O in ar (3 m; LiCor, LI-7200)
+CO2 in ar (3 m; LiCor, LI-7200)
+Soil Heat Flux ( -5 cm; Hukseflux ) 
+Soil Temperature ( -5 cm; T108)  
+Soil moisture (0 to -5 cm; Theta Probe, ML2x ) 
+Precipitation (5m; Texas eletronics,  TR525USW )
+
+OBS: The sensors of Soil heat Flux, Soil temperature and Soil moisture are in 3 different horizontal positions. 
+Use the mean of the 3 position for represent each variable.  
+
+
+The raw data was processed using EddyPro® Software - LI-COR Environmental 
+
+
+>>>Half-hour data
+% 1-code
+% 2-year
+% 3-Julian Day
+% 4 - Day
+% 5 - Month
+% 6 - HH
+% 7 - MM
+% 8 -999.99 
+% 9-Batery
+% 10-Panel Temperature
+% 11-u(m/s)
+% 12-v(m/s)
+% 13-w(m/s)
+% 14-Ts (K) - (Sonic Temperature  - CSAT)
+% 15-Td (K) -Dew Point Temperature (from Sonic Temperature - CSAT)
+% 16-e (Pa) (from CSAT)
+% 17-es (Pa) (from CSAT)
+% 18-VPD (Pa)- vapour pressure deficit (from CSAT)
+% 19-RHs (%)- Relative humidity (from CSAT)
+% 20-H2O_mix_ratio (mmol/mol_d)- (from Licor - LI-7200 )
+% 21-H2O_flux (mmol/m²s) - eddy covariance method
+% 22-H2O_inc(micromol/m²s)
+% 23-H2O_Stg(micromol/m²s)
+% 24-H2O_Flag(1-9)
+% 25-ET - eddy covariance method
+% 26-LE_flux (W/m²)- eddy covariance method
+% 27-LE_inc(W/m²)
+% 28-LE_Stg(W/m²)
+% 29-LE-Flag(1-9)
+% 30-H_flux(W/m²) - eddy covariance method
+% 31-H_inc(W/m²)
+% 32-H_Stg(W/m²)
+% 33-H-Flag(1-9)
+% 34-Bowen Ratio - (H/LE)
+% 35-CO2_mix_ratio(micromol/mol_d)  (from Licor - LI-7200 )
+% 36-CO2_flux(micromol/m²s)
+% 37-CO2_inc(micromol/m²s)
+% 38-CO2_Stg(micromol/m²s)
+% 39-CO2_Flag(1-9)
+% 40-CH4_mix_ratio(micromol/mol_d) - -999.99
+% 41-CH4_flux(micromol/m²s)- -999.99
+% 42-CH4_inc(micromol/m²s)- -999.99
+% 43-CH4_Stg(micromol/m²s)- -999.99
+% 44-CH4_Flag(1-9)- -999.99
+% 45-L (m)- Monin Obukov Lenght
+% 46-u* (m/s)- friction velocity (ustar)
+% 47-T* (K)- (Tstar)
+% 48-TKE (m²/s²)- Turbulent Kinetic Energy
+% 49-Tau (kg/m²s)
+% 50-Tau_inc(kg/m²s)
+% 51-Tau_Stg(kg/m²s)
+% 52-Tau_Flag(1-9)
+% 53-wind speed (m/s)- wind speed  (from CSAT)
+% 54-wind direction - wind direction (from CSAT) (° from north)
+% 55-Temperature (°C)- Air Temperature (3m; Vaisala, HMP155)
+% 56-RH (%)- Relative Humidity (3m; Vaisala, HMP155)
+% 57-Rg(W/m²) - Incoming Short wave radiation (3 m; Kipp & Zonen, CNR4))
+% 58-Pmb - Pressure - (1 m; Analyzer Interface Unit - Li7550)
+% 59-Prec (mm) - Precipitation (5m; Texas eletronics,  TR525USW )
+% 60-Fsolo1 (W/m2)- Soil Heat Flux ( -5 cm; Hukseflux ) 
+% 61-Tsolo1 (°C)- Soil Temperature ( -5 cm; T108)  
+% 62-Rn (W/m2) - Net Radiation (Rg - SWout + LWin -LWout)(3 m; Kipp & Zonen, CNR4)
+% 63-PAR (W/m2)- Incoming Photosynthetic Active Radiation (PAR) ( 3 m; PAR LIT Kipp & Zonen)
+% 64-SWout (W/m2)- Outgoing Short wave radiation (3 m; Kipp & Zonen, CNR4)
+% 65-LWin (W/m2)- Incoming Long wave radiation (3 m; Kipp & Zonen, CNR4)
+% 66-LWout (W/m2)- Outgoing Long wave radiation (3 m; Kipp & Zonen, CNR4)
+% 67-Fsolo2 (W/m2)- Soil Heat Flux ( -5 cm; Hukseflux ) 
+% 68-Fsolo3 (W/m2)- Soil Heat Flux ( -5 cm; Hukseflux ) 
+% 69-Tsolo2 (°C)- Soil Temperature ( -5 cm; T108)  
+% 70-Tsolo3 (°C)- Soil Temperature ( -5 cm; T108)  
+% 71-H2OSolo1 (m³/m³)- Soil moisture (0 to -5 cm; Theta Probe, ML2x ) 
+% 72-H2OSolo2 (m³/m³)- Soil moisture (0 to -5 cm; Theta Probe, ML2x ) 
+% 73-H2OSolo3(m³/m³) - Soil moisture (0 to -5 cm; Theta Probe, ML2x ) 
+% 74-H2OSolo4(m³/m³) - -999.99
+% 75--999.99
+% 76- -999.99
+% 77--999.99
+% 78--999.99
+% 79--999.99
+% 80- -999.99
+% 81- -999.99
+% 82- -999.99
+% 83 - -999.99
+% 84-u-var - variance of u wind component 
+% 85-v_var - variance of u wind component 
+% 86-w_var - variance of u wind component 
+% 87-spikes_hf
+% 88-amplitude_resolution_hf
+% 89-drop_out_hf
+% 90-absolute_limits_hf
+% 91-descontinuidade_hf
+
