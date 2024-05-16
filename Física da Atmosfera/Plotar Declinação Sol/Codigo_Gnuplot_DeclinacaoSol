@@ -1,0 +1,8 @@
+set grid
+set xlabel "n - Dias"
+set ylabel " Declinacao ({/Symbol d})"
+set title "Funcao Declinacao do Sol - durante o Ano" 
+set yrange [-30:30]
+set xrange [0:360]
+f(x) = 23.45*sin(((360.0/365)*(284.0+x))*(pi/180))
+plot f(x) lw 2 lt 8 lc 6
