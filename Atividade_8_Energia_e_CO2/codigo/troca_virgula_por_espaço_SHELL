@@ -1,3 +1,0 @@
-sed "s/\,/ /g" Maio.csv  > maio.txt
-
-sed "s/\"/ /g" maio.txt  > maio2.txt
