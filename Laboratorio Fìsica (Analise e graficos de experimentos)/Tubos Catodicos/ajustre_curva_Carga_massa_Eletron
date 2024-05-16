@@ -1,0 +1,114 @@
+##########################################################################
+#
+# Código - Ajuste de Curva - GNUPLOT
+# 
+# Quantização da Razão Carga Massa - Elétron 
+# Experimento: Raios Tubo Catódico
+#
+# ALUNO: Leonardo C. Rossato
+# Disciplina: Laboratório de Física Moderna
+##########################################################################
+#
+---------------------------------------
+#
+#  U S A N D O   A   T A B E L A  -  1
+#
+---------------------------------------
+#
+FIT_LIMIT=1E-7
+FIT_MAXITER=200
+#
+set grid
+set title "Quantizacao da Razao Carga Massa - Eletron | Experimento: Raios Tubo Catodico | Tabela 1 | Va = 4 kV" 
+set xlabel "Vpp - Voltagem no Capacitor"
+set ylabel "B (mT) - Intensidade Campo Magnetico"  
+set key box linestyle 6
+set key right bottom
+#
+f(x) = a*x 
+fit f(x) 'tabela1.dat' using 1:2 via a
+plot f(x) lc 6 #lc 6 --> azul
+rep 'tabela1.dat' using 1:2 lc 7 #lc 7 --> vermelho
+
+
+#########################################################################
+#####   RESULTADO DO "FIT" | Tabela1 | Va = 4 kV
+#########################################################################
+
+gnuplot> fit f(x) 'tabela1.dat' using 1:2 via a,b
+iter      chisq       delta/lim  lambda   a             b            
+   0 1.0929130000e+05   0.00e+00  7.42e-01    1.000000e+00   1.000000e+00
+   1 1.2157646568e+04  -7.99e+07  7.42e-02    2.102727e+02  -7.051948e+00
+   2 1.1251628492e+02  -1.07e+09  7.42e-03    3.143885e+02  -7.454344e+00
+   3 1.1221818182e+02  -2.66e+04  7.42e-04    3.149091e+02  -7.454545e+00
+   4 1.1221818182e+02  -6.64e-05  7.42e-05    3.149091e+02  -7.454545e+00
+iter      chisq       delta/lim  lambda   a             b            
+
+iter      chisq       delta/lim  lambda   a            
+   0 7.2349090909e+02   0.00e+00  9.96e+01    3.149091e+02
+   1 7.2349090909e+02   0.00e+00  9.96e+00    3.149091e+02
+iter      chisq       delta/lim  lambda   a            
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 723.491
+rel. change during last iteration : 0
+
+degrees of freedom    (FIT_NDF)                        : 10
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 8.50583
+variance of residuals (reduced chisquare) = WSSR/ndf   : 72.3491
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 314.909          +/- 8.11         (2.575%)
+
+
+
+
+#########################################################################
+-------------------------------------------------------------------------
+#
+#  U S A N D O   A   T A B E L A  -  2
+#
+-------------------------------------------------------------------------
+#########################################################################
+#
+FIT_LIMIT=1E-7
+FIT_MAXITER=200
+#
+set grid
+set title "Quantizacao da Razao Carga Massa - Eletron | Experimento: Raios Tubo Catodico | Tabela 2 | Va = 3 kV" 
+set xlabel "Vpp - Voltagem no Capacitor"
+set ylabel "B (mT) - Intensidade Campo Magnetico"  
+set key box linestyle 6
+set key right bottom
+#
+f(x) = a*x 
+fit f(x) 'tabela2.dat' using 1:2 via a
+plot f(x) lc 6 #lc 6 --> azul
+rep 'tabela1.dat' using 1:2 lc 7 #lc 7 --> vermelho
+
+#########################################################################
+#####   RESULTADO DO "FIT" | Tabela2 | Va = 3 KV
+#########################################################################
+
+iter      chisq       delta/lim  lambda   a            
+   0 1.7624545455e+03   0.00e+00  9.96e+01    3.149091e+02
+   1 1.0697621843e+03  -6.48e+06  9.96e+00    2.918258e+02
+   2 1.0649181858e+03  -4.55e+04  9.96e-01    2.897292e+02
+   3 1.0649181818e+03  -3.75e-02  9.96e-02    2.897273e+02
+iter      chisq       delta/lim  lambda   a            
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 1064.92
+rel. change during last iteration : -3.75244e-09
+
+degrees of freedom    (FIT_NDF)                        : 10
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 10.3195
+variance of residuals (reduced chisquare) = WSSR/ndf   : 106.492
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 289.727          +/- 9.839        (3.396%)
+
+
+

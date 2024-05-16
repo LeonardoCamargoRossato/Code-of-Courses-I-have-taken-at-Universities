@@ -1,0 +1,68 @@
+##########################################################################
+#
+# Código - Ajuste de Curva - GNUPLOT
+# 
+# Lei de Hooke - Deformação Massa-Mola
+#
+# ALUNO: Leonardo C. Rossato
+# Disciplina: Laboratório de Física 1
+##########################################################################
+#
+---------------------------------------
+#
+#  U S A N D O   A   T A B E L A  -  1
+#
+---------------------------------------
+#
+FIT_LIMIT=1E-7
+FIT_MAXITER=200
+#
+set grid
+set title "Lei de Hooke - Deformacao Massa-Mola" 
+set xlabel "X (Distancia de Deformacao da Mola)"
+set ylabel "P (Peso)"  
+set key box linestyle 6
+set key right bottom
+set yrange [0:65]
+set xrange [0:6]
+#
+f(x) = a*x + b
+fit f(x) 'tabela1.dat' using 1:2 via a,b
+plot f(x) lc 6 #lc 6 --> azul
+rep 'tabela1.dat' using 1:2 lc 7 #lc 7 --> vermelho
+
+
+#########################################################################
+#####   RESULTADO DO "FIT" | Tabela1 |
+#########################################################################
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 8.3064835165e+00   0.00e+00  2.08e+00    7.243777e+00   1.000000e+00
+   1 2.0774211851e+00  -3.00e+07  2.08e-01    5.960536e+00   5.963036e-01
+   2 1.2876264118e-01  -1.51e+08  2.08e-02    8.768569e+00  -6.486521e-01
+   3 1.2571428624e-01  -2.42e+05  2.08e-03    8.892077e+00  -6.999787e-01
+   4 1.2571428571e-01  -4.17e-02  2.08e-04    8.892128e+00  -7.000000e-01
+iter      chisq       delta/lim  lambda   a             b            
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.125714
+rel. change during last iteration : -4.17337e-09
+
+degrees of freedom    (FIT_NDF)                        : 4
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.177281
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0314286
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 8.89213          +/- 0.4324       (4.863%)
+b               = -0.7             +/- 0.165        (23.58%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b              -0.899  1.000 
+
+
+
+
+
